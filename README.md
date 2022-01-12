@@ -4,8 +4,11 @@ This repository contains helper scripts to prepare files needed for a Rust SGX S
 
 This includes:
 
-* Intel SGX SDK (using Docker to run the installer)
-* Rust SGX SDK headers and EDL files (using a sparse Git checkout)
+* [Intel SGX SDK] (using Docker to run the installer)
+* [Rust SGX SDK] headers and EDL files (using a sparse Git checkout)
+
+[Intel SGX SDK]: https://github.com/intel/linux-sgx
+[Rust SGX SDK]: https://github.com/apache/incubator-teaclave-sgx-sdk
 
 ## Usage
 
