@@ -17,7 +17,9 @@ if test -e "${SGX_SDK_PREFIX}/sgxsdk"; then
     exit 1
 fi
 
-docker build \
+# The image build depends on BuildKit, so explicitly enable that for now, until it becomes the default.
+# Upstream issue: https://github.com/moby/moby/issues/40379
+DOCKER_BUILDKIT=1 docker build \
     --build-arg INTEL_SGX_SDK_INSTALLER_URL="${INTEL_SGX_SDK_INSTALLER_URL}" \
     --tag intel-sgx-sdk-install \
     - <"$(dirname "$0")"/Dockerfile
