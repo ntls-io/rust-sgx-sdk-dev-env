@@ -9,6 +9,6 @@ export INTEL_SGX_SDK_INSTALLER_URL="https://download.01.org/intel-sgx/sgx-linux/
 # Rust SGX SDK 1.1.4
 # Merge of 1.1.4-testing branch, plus follow-up fixes.
 # See: https://github.com/apache/incubator-teaclave-sgx-sdk/issues/360
-export RUST_SGX_SDK_REVISION="565960cd7b4b36d1188459d75652619971c43f7e"
+export RUST_SGX_SDK_REVISION="e8a9fc22939befa27ff67f5509b2c2dfe8499945"
 
 "$(dirname "$0")"/prepare.sh
