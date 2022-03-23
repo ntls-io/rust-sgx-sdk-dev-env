@@ -32,4 +32,11 @@ docker run --rm \
     intel-sgx-sdk-install \
     --prefix "${SGX_SDK_PREFIX}"
 
+docker run --rm \
+    -u "$(id --user):$(id --group)" \
+    -v "${SGX_SDK_PREFIX}:${SGX_SDK_PREFIX}" \
+    --entrypoint '' \
+    intel-sgx-sdk-install \
+    sh -c "cd /usr/lib/x86_64-linux-gnu && cp -d -p libsgx_dcap* libsgx_qe3_logic.so libsgx_pce_logic.so -t ${SGX_SDK_PREFIX}/sgxsdk/lib64 && ln -s libsgx_dcap_ql.so.1 ${SGX_SDK_PREFIX}/sgxsdk/lib64/libsgx_dcap_ql.so"
+
 docker image rm intel-sgx-sdk-install
