@@ -11,7 +11,7 @@ test -d sgxsdk && rm -r sgxsdk
 # Ensure a sparse checkout:
 test -d incubator-teaclave-sgx-sdk || {
     git clone --no-checkout --filter=tree:0 https://github.com/apache/incubator-teaclave-sgx-sdk
-    git -C incubator-teaclave-sgx-sdk sparse-checkout set /common /edl
+    git -C incubator-teaclave-sgx-sdk sparse-checkout set common edl
 }
 git -C incubator-teaclave-sgx-sdk switch -d "${RUST_SGX_SDK_REVISION}"
 
